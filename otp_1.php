@@ -31,7 +31,7 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->SMTPAuth = true;
 $mail->Username = 'bundheliyaridham@gmail.com';
 $mail->Password = 'kmdq baov ckzv zrqt ';
-$mail->setFrom('bundheliyaridham@gmail.com', 'Your Company');
+$mail->setFrom('bundheliyaridham@gmail.com', 'MY BROKER');
 
 if ($email) {
     $mail->addAddress($email);
@@ -39,7 +39,7 @@ if ($email) {
     // Handle missing email address
 }
 
-$mail->addReplyTo('bundheliyaridham@gmail.com', 'Your Company');
+$mail->addReplyTo('bundheliyaridham@gmail.com', 'MY BROKER');
 $mail->SMTPDebug = 2;
 $mail->IsHTML(true);
 $mail->Subject = 'Verify Your One-Time Password';
@@ -49,7 +49,8 @@ $mail->Body = '<html>
                     <title>Mail</title>
                 </head>
                 <body>
-                    <p>Your One-Time Password (OTP): ' . $r . '</p>
+                <P> Do Not share to anyone</P>
+                    <p>Your OTP: ' . $r . '</p>
                 </body>
               </html>';
 
