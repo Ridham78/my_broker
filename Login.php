@@ -163,7 +163,7 @@ mysqli_close($conn);
             <input type="password" id="password" name="password" required><br><br>
 
             <input type="submit" name="login_button" value="Login">
-            <a href="Registation.php">Don't have an account? Sign up</a>
+            <a href="Registation.php">Don't have an account ? Sign up</a>
         </form> 
     </div>
 </div>
