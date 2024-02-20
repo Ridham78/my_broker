@@ -99,7 +99,7 @@
                             ‎ ‎ ‎ ‎
                         </a>
 
-                        <a href="ragistation" class="button home__button">Get Started</a>
+                        <a href="Property-list.php?id=<?php echo$id ?>" class="button home__button">Get Started</a>
 
                     </div>
                 </div>
