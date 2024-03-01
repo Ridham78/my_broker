@@ -66,7 +66,8 @@
                     </div>
                 </div>
             </nav>
-        </header><?php
+        </header>
+            <?php
         include 'connection.php';
         $query = "SELECT imagepath, cost, type, built, bhk, bathroom, listingtype, p_id, property_status FROM property WHERE status = 1 AND property_status = 1";
         $result = mysqli_query($conn, $query);
@@ -96,7 +97,7 @@
                                 <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i><?php echo $beds; ?> Bed</small>
                                 <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i><?php echo $baths; ?> Bath</small>
                                 <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3"><?php echo $typee; ?></div><br>
-                                <a href="info.php?id=<?php echo $_GET['id']; ?>&p_id=<?php echo $row['p_id']; ?>"><br>
+                                <a href="propertyinfo.php?id=<?php echo $_GET['id']; ?>&p_id=<?php echo $row['p_id']; ?>"><br>
                                     <center>
                                         <button class="btninfo">Info</button></a>
                                 </center>
@@ -112,3 +113,11 @@
             echo "No properties found.";
         }
         ?>
+        <!--=============== SWIPER JS ===============-->
+        <script src="js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
