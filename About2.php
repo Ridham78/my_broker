@@ -38,8 +38,8 @@
                     <li class="nav__item dropdown">
                         <a href="" class="nav__link">PROPERTY</a>
                         <div class="dropdown-content">
-                            <a href="#property1" class="nav__link active-link">Property list</a>
-                            <a href="#property2" class="nav__link active-link">Property Valuation</a>
+                            <a href="Property-list2.php" class="nav__link active-link">Property list</a>
+                            <a href="Property-valuation2.php" class="nav__link active-link">Property Valuation</a>
                         </div>
                     </li>
                     <li class="nav__item">
@@ -102,7 +102,7 @@
         <div class="footer__container container grid">
           
 
-        <span class="footer__copy">&#169; Bedimcode. All rigths reserved</span>
+        <span class="footer__copy">&#169; My Broker. All rigths reserved</span>
     </footer>
 
     <!--=============== SCROLL UP ===============-->

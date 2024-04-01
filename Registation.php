@@ -15,7 +15,86 @@
 
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="css/style.css">
+        <style>
 
+            body {
+                color: #000;
+                line-height: 1.5;
+            }
+
+            .title p {
+                font-size: 20px;
+                color: orange;
+                font-weight: bold;
+                margin: 0;
+            }
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                border-radius: 5px;
+                margin-top: -58px;
+            }
+
+            .title {
+                margin-bottom: 20px;
+            }
+
+            .title p {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-left: 30%;
+                margin-top: 161px;
+            }
+
+            label {
+                color: #000;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"] {
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                background-color: #f0f0f0;
+                margin-bottom: 10px;
+            }
+
+            input[type="submit"] {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: #ffa500;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            a {
+                color: #ffa500;
+                text-decoration: none;
+            }
+
+            .error-message {
+                color: red;
+                margin-top: 5px;
+            }
+
+        </style>
         <title>My Broker</title>
     </head>
     <body>
@@ -30,16 +109,16 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">HOME</a>
+                            <a href="hompage2.php" class="nav__link">HOME</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#featured" class="nav__link">PROPERTY</a>
+                            <a href="Property-list2.php" class="nav__link">PROPERTY</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#ABOUT2" class="nav__link">ABOUT</a>
+                            <a href="About2.php" class="nav__link">ABOUT</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#REGISTARTION" class="nav__link">LOGIN</a>
+                            <a href="Login.php" class="nav__link active-link">LOGIN</a>
                         </li>
                     </ul>
 
@@ -60,6 +139,9 @@
         </header>
 
         <form name="myForm" onsubmit="return validateForm()" action="" method="post">
+            <center><div class="title">
+                    <p>Registration</p>
+                </div></center>
             <label>Name:</label><br>
             <input type="text" id="name" name="name" pattern="[A-Za-z]+" oninput="validateName()">
             <div class="error-message" id="nameError"></div>
@@ -83,6 +165,7 @@
             <label>Address:</label><br>
             <input type="text" name="address" required><br>
             <input type="submit" name="signUP_button" value="Sign Up">
+            <br>
             <a href="Login.php">Do you have an account? Sign in</a>
         </form>
 
@@ -184,6 +267,84 @@
                 return true;
             }
         </script>
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <!-- <div class="footer__content">
+                    <h3 class="footer__title">Our information</h3>
+
+                    <ul class="footer__list">
+                        <li>1234 - Peru</li>
+                        <li>La Libertad </li>
+                        <li>123-456-789</li>
+                    </ul>
+                </div> -->
+                <div class="footer__content">
+                    <h3 class="footer__title">About Us</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Support Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Customer Support</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Copy Right</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Property</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">House</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Villa</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Apartment</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Plot</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Social</h3>
+
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+
+                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-twitter'></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+
+            <span class="footer__copy">&#169; My Broker. All rigths reserved</span>
+        </footer>
+
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+        </a>
+
         <!--=============== SWIPER JS ===============-->
         <script src="js/swiper-bundle.min.js"></script>
 
@@ -194,8 +355,66 @@
 
 
 <?php
-require('./connection.php');
-include 'connection.php';
+//require('./connection.php');
+//include 'connection.php';
+//
+//if (isset($_POST['signUP_button'])) {
+//    // Get the form data
+//    $name = $_POST['name'];
+//    $email = $_POST['email'];
+//    $Contact = $_POST['contact_number'];
+//    $password = $_POST['password'];
+//    $confPassword = $_POST['confiPassword'];
+//    $address = $_POST['address'];
+//
+//    if (!empty($name) && !empty($email) && !empty($Contact) && !empty($password) && !empty($confPassword) && !empty($address)) {
+//        if ($password == $confPassword) {
+//            // Check if the email already exists in the database
+//            $checkQuery = "SELECT U_Email FROM master_table WHERE U_Email = '$email'";
+//            $checkResult = mysqli_query($conn, $checkQuery);
+//
+//            if (mysqli_num_rows($checkResult) > 0) {
+//                // Email already exists, display an error message
+//                echo '<script>alert("Email is already in use. Please choose a different email.");</script>';
+//            } else {
+//                // Email is available, proceed with the registration
+//                // Prepare the SQL statement
+//                $query = "INSERT INTO master_table(U_name,U_Email,U_Contact_number,U_Address,U_Password) VALUES('$name','$email','$Contact','$address','$password')";
+//                $result = mysqli_query($conn, $query);
+//
+//                if ($result) {
+//                    echo '<script>alert("Registration successful.");</script>';
+//                } else {
+//                    echo 'Error: ' . mysqli_error($conn);
+//                }
+//            }
+//        } else {
+//            echo '<script>alert("Passwords do not match!");</script>';
+//        }
+//    }
+//}
+//
+//mysqli_close($conn);
+session_start();
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require 'connection.php';
+require 'Exception.php';
+require 'SMTP.php';
+require 'PHPMailer.php';
+
+$mail = new PHPMailer(true);
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->SMTPAuth = true;
+$mail->Username = 'bundheliyaridham@gmail.com';
+$mail->Password = 'kmdq baov ckzv zrqt ';
+$mail->setFrom('bundheliyaridham@gmail.com', 'MY BROKER');
 
 if (isset($_POST['signUP_button'])) {
     // Get the form data
@@ -222,7 +441,39 @@ if (isset($_POST['signUP_button'])) {
                 $result = mysqli_query($conn, $query);
 
                 if ($result) {
-                    echo '<script>alert("Registration successful.");</script>';
+                    // Registration successful, send an email
+                    $mail->addAddress($email);
+                    $mail->addReplyTo('bundheliyaridham@gmail.com', 'MY BROKER');
+                    $mail->IsHTML(true);
+                    $mail->Subject = 'Registration Successful';
+                    $mail->Body = '<html>
+                                    <head>
+                                        <meta charset="utf-8">
+                                        <title>Registration Successful</title>
+                                    </head>
+                                    <body>
+                                        <p>Dear ' . $name . ',</p>
+                                        <p>Thank you for registering with our system.</p>
+                                        <p>Your registration details:</p>
+                                        <p>Email: ' . $email . '</p>
+                                        <p>Password ' . $password . '</p>
+                                        <p>Contact Number: ' . $Contact . '</p>
+                                        <p>Address: ' . $address . '</p>
+                                        <p>Best regards,<br>Your System</p>
+                                    </body>
+                                  </html>';
+
+                    try {
+                        if ($mail->send()) {
+                            echo '<script>alert("Registration successful. An email has been sent to your registered email address.");</script>';
+                            header("Location: otp_2.php");
+                            exit();
+                        } else {
+                            echo "Error sending email: " . $mail->ErrorInfo;
+                        }
+                    } catch (Exception $e) {
+                        echo "Mailer Error: " . $mail->ErrorInfo;
+                    }
                 } else {
                     echo 'Error: ' . mysqli_error($conn);
                 }
@@ -235,5 +486,7 @@ if (isset($_POST['signUP_button'])) {
 
 mysqli_close($conn);
 ?>
+
+
 
 

@@ -11,7 +11,7 @@ if (isset($_POST['con'])) {
 
     $sql = "SELECT otp, master_table.U_id FROM onetimepassword
             INNER JOIN master_table ON onetimepassword.mail = master_table.U_Email
-            WHERE onetimepassword.mail = ?";    
+            WHERE onetimepassword.mail = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "s", $email);
@@ -76,15 +76,7 @@ if (isset($_POST['con'])) {
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
         <a href="about.html"></a>
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -127,7 +119,7 @@ if (isset($_POST['con'])) {
                 margin-top: 10px;
                 padding: 10px 100px;
                 font-size: 16px;
-                background-color: #00B98E !important;
+                background-color: #ffb86c !important;
                 color: #fff;
                 border: none;
                 border-radius: 5px;
@@ -135,7 +127,12 @@ if (isset($_POST['con'])) {
             }
 
             .verify-btn:hover {
-                background-color: #00B98E !important;
+                background-color: #000000 !important;
+            }
+            h1, h2, h3, h4 {
+                color: var(--title-color);
+                font-weight: var(--font-medium);
+                margin-top: 112px;
             }
         </style>
         <script>
@@ -152,63 +149,176 @@ if (isset($_POST['con'])) {
             }
         </script>
     </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>My Broker</title>
+    </head>
+
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="hompage2.html" class="nav__logo">
+                    <i class='bx bxs-home-circle nav__logo-icon'></i> My Broker
+
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="hompage2.php" class="nav__link active-link">HOME</a>
+                        </li>
+
+                        <li class="nav__item dropdown">
+                            <a href="" class="nav__link">PROPERTY</a>
+                            <div class="dropdown-content">
+                                <a href="property-list2.php" class="nav__link active-link">Property list</a>
+                                <a href="property-valuation2.php" class="nav__link active-link">Property Valuation</a>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="About2.php" class="nav__link">ABOUT</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="Login.php" class="nav__link">LOGIN</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change buttoOn -->
+                    <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-grid-alt'></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
     <body>
         <div class="container-xxl bg-white p-0">
 
 
 
-            <!-- Navbar Start -->
-            <div class="container-fluid nav-bar bg-transparent">
-                <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-                    <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
-                        <div class="icon p-2 me-2">
-                            <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
-                        </div>
-                        <h1 class="m-0 text-primary">MyBroker</h1>
-                    </a>
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto">
-                            <a href="Homepage2.php" class="nav-item nav-link">Home</a>
 
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="property-liist2.php" class="dropdown-item">Property List</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="navbar-nav ms-auto">
+            <br><br><br>
+            <h1>OTP Verification</h1><br>
 
-                        <a href="About2.php" class="nav-item nav-link">About</a>
+            <form method="post" action="">
+                <div class="otp-container">
+                    <input class="otp-input" type="text" name="otp1" id="otp1" maxlength="1" pattern="[0-9]" required oninput="moveNext(this, otp2)" onkeydown="moveBack(this, otp1, event)">
+                    <input class="otp-input" type="text" name="otp2" id="otp2" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp3)" onkeydown="moveBack(this, otp1, event)">
+                    <input class="otp-input" type="text" name="otp3" id="otp3" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp4)" onkeydown="moveBack(this, otp2, event)">
+                    <input class="otp-input" type="text" name="otp4" id="otp4" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp5)" onkeydown="moveBack(this, otp3, event)">
+                    <input class="otp-input" type="text" name="otp5" id="otp5" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp6)" onkeydown="moveBack(this, otp4, event)">
+                    <input class="otp-input" type="text" name="otp6" id="otp6" maxlength="1" pattern="[0-9]" onkeydown="moveBack(this, otp5, event)">
+                </div>
+                <div class="button-container">
 
-                        <a href="Login.php" class="nav-item nav-link">Login</a>
-                    </div>
-                </nav>
-            </div> 
-        </div> 
-        <br><br><br>
-        <h1>OTP Verification</h1><br>
+                    <button class="verify-btn" type="submit" name="con">Verify</button>
+                </div>
+            </form>
 
-        <form method="post" action="">
-            <div class="otp-container">
-                <input class="otp-input" type="text" name="otp1" id="otp1" maxlength="1" pattern="[0-9]" required oninput="moveNext(this, otp2)" onkeydown="moveBack(this, otp1, event)">
-                <input class="otp-input" type="text" name="otp2" id="otp2" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp3)" onkeydown="moveBack(this, otp1, event)">
-                <input class="otp-input" type="text" name="otp3" id="otp3" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp4)" onkeydown="moveBack(this, otp2, event)">
-                <input class="otp-input" type="text" name="otp4" id="otp4" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp5)" onkeydown="moveBack(this, otp3, event)">
-                <input class="otp-input" type="text" name="otp5" id="otp5" maxlength="1" pattern="[0-9]" oninput="moveNext(this, otp6)" onkeydown="moveBack(this, otp4, event)">
-                <input class="otp-input" type="text" name="otp6" id="otp6" maxlength="1" pattern="[0-9]" onkeydown="moveBack(this, otp5, event)">
+            <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <!-- <div class="footer__content">
+                    <h3 class="footer__title">Our information</h3>
+
+                    <ul class="footer__list">
+                        <li>1234 - Peru</li>
+                        <li>La Libertad </li>
+                        <li>123-456-789</li>
+                    </ul>
+                </div> -->
+                <div class="footer__content">
+                    <h3 class="footer__title">About Us</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">Support Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Customer Support</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Copy Right</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Property</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">House</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Villa</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Apartment</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Plot</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Social</h3>
+
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+
+                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-twitter'></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram'></i>
+                        </a>
+                    </ul>
+                </div>
             </div>
-            <div class="button-container">
-
-                <button class="verify-btn" type="submit" name="con">Verify</button>
-            </div>
-        </form>
 
 
+            <span class="footer__copy">&#169; My Broker. All rigths reserved</span>
+        </footer>
+            <!--=============== SCROLL UP ===============-->
+            <a href="#" class="scrollup" id="scroll-up">
+                <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+            </a>
+
+            <!--=============== SWIPER JS ===============-->
+            <script src="js/swiper-bundle.min.js"></script>
+
+            <!--=============== MAIN JS ===============-->
+            <script src="js/main.js"></script>
     </body>
-</html>
+
+</html>%

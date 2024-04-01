@@ -34,17 +34,22 @@
                         <li class="nav__item">
                             <?php $id = $_GET['id'] ?>
 
-                            <a href="homepage(user).php?id=<?php echo$id ?>" class="nav__link ">HOME</a>
+                            <a href="homepage(user).php?id=<?php echo$id ?>" class="nav__link active-link">HOME</a>
                         </li>
                         <li class="nav__item dropdown">
                             <a href="#" class="nav__link">PROPERTY</a>
                             <div class="dropdown-content">
                                 <a href="Property-list.php?id=<?php echo$id ?>" class="nav__link active-link">Property list</a>
                                 <a href="Property-valuation.php?id=<?php echo$id ?>" class="nav__link active-link">Property Valuation</a>
+                                <a href="financial_calculator.php?id=<?php echo$id ?>" class="nav__link active-link">Financial Calculator</a>
+
                             </div>
                         </li>
                         <li class="nav__item">
-                            <a href="Add-property.php?id=<?php echo$id ?>" class="nav__link active-link">ADD PROPERTY</a>
+                            <a href="Add-property.php?id=<?php echo$id ?>" class="nav__link ">ADD PROPERTY</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="payment.php?id=<?php echo$id ?>" class="nav__link ">SUBSCRIPTION</a>
                         </li>
                         <li class="nav__item">
                             <a href="Profile.php?id=<?php echo$id ?>" class="nav__link ">PROFILE</a>
@@ -57,7 +62,7 @@
                         <i class='bx bx-x'></i>
                     </div>
                 </div>
-
+                <a href="homepage(user).php"></a>
                 <div class="nav__btns">
                     <!-- Theme change buttoOn -->
                     <i class='bx bx-moon change-theme' id="theme-button"></i>
@@ -99,134 +104,28 @@
                             ‎ ‎ ‎ ‎
                         </a>
 
-                        <a href="Property-list.php?id=<?php echo$id ?>" class="button home__button">Get Started</a>
+                        <a href="ragistation" class="button home__button">Get Started</a>
 
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==============TEAM================ -->
-        <section class="testimonial section container">
-            <div class="testimonial__container grid">
-                <div class="swiper testimonial-swiper">
-                    <div class="swiper-wrapper">
-                        <div class="testimonial__card swiper-slide">
-                            <div class="testimonial__quote">
-                                <i class='bx bxs-quote-alt-left'></i>
-                            </div>
-                            <p class="testimonial__description">
-                                They are the best watches that one acquires, also they are always with the latest
-                                news and trends, with a very comfortable price and especially with the attention
-                                you receive, they are always attentive to your questions.
-                            </p>
-                            <h3 class="testimonial__date">March 27. 2021</h3>
 
-                            <div class="testimonial__perfil">
-                                <img src="img/profile-pic (1).png" alt="" class="testimonial__perfil-img">
-
-                                <div class="testimonial__perfil-data">
-                                    <span class="testimonial__perfil-name">Nihar Devani</span>
-                                    <span class="testimonial__perfil-detail">202103100110200</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial__card swiper-slide">
-                            <div class="testimonial__quote">
-                                <i class='bx bxs-quote-alt-left'></i>
-                            </div>
-                            <p class="testimonial__description">
-                                They are the best watches that one acquires, also they are always with the latest
-                                news and trends, with a very comfortable price and especially with the attention
-                                you receive, they are always attentive to your questions.
-                            </p>
-                            <h3 class="testimonial__date">March 27. 2021</h3>
-
-                            <div class="testimonial__perfil">
-                                <img src="img/testimonial1.jpg" alt="" class="testimonial__perfil-img">
-
-                                <div class="testimonial__perfil-data">
-                                    <span class="testimonial__perfil-name">Ridham Bundheliya</span>
-                                    <span class="testimonial__perfil-detail">202103100110205</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial__card swiper-slide">
-                            <div class="testimonial__quote">
-                                <i class='bx bxs-quote-alt-left'></i>
-                            </div>
-                            <p class="testimonial__description">
-                                They are the best watches that one acquires, also they are always with the latest
-                                news and trends, with a very comfortable price and especially with the attention
-                                you receive, they are always attentive to your questions.
-                            </p>
-                            <h3 class="testimonial__date">March 27. 2021</h3>
-
-                            <div class="testimonial__perfil">
-                                <img src="img/testimonial2.jpg" alt="" class="testimonial__perfil-img">
-
-                                <div class="testimonial__perfil-data">
-                                    <span class="testimonial__perfil-name">Jay Navadiya</span>
-                                    <span class="testimonial__perfil-detail">202103100110207</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial__card swiper-slide">
-                            <div class="testimonial__quote">
-                                <i class='bx bxs-quote-alt-left'></i>
-                            </div>
-                            <p class="testimonial__description">
-                                They are the best watches that one acquires, also they are always with the latest
-                                news and trends, with a very comfortable price and especially with the attention
-                                you receive, they are always attentive to your questions.
-                            </p>
-                            <h3 class="testimonial__date">March 27. 2021</h3>
-
-                            <div class="testimonial__perfil">
-                                <img src="img/testimonial3.jpg" alt="" class="testimonial__perfil-img">
-
-                                <div class="testimonial__perfil-data">
-                                    <span class="testimonial__perfil-name">Sarthak Mayani</span>
-                                    <span class="testimonial__perfil-detail">202103100110209</span>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="swiper-button-next">
-                        <i class='bx bx-right-arrow-alt'></i>
-                    </div>
-                    <div class="swiper-button-prev">
-                        <i class='bx bx-left-arrow-alt'></i>
-                    </div>
-                </div>
-
-                <div class="testimonial__images">
-                    <div class="testimonial__square"></div>
-                    <img src="img/house2.jpg" alt="" class="testimonial__img">
-                </div>
-            </div>
-        </section>
-        <!-- ================================ -->
 
 
         <!--==================== FOOTER ====================-->
         <footer class="footer section">
             <div class="footer__container container grid">
-                <div class="footer__content">
+                 <div class="footer__content">
                     <h3 class="footer__title">Our information</h3>
 
                     <ul class="footer__list">
                         <li>1234 - Peru</li>
-                        <li>La Libertad 43210</li>
+                        <li>La Libertad </li>
                         <li>123-456-789</li>
                     </ul>
-                </div>
+                </div> 
                 <div class="footer__content">
                     <h3 class="footer__title">About Us</h3>
 
@@ -247,20 +146,20 @@
                 </div>
 
                 <div class="footer__content">
-                    <h3 class="footer__title">Product</h3>
+                    <h3 class="footer__title">Property</h3>
 
                     <ul class="footer__links">
                         <li>
-                            <a href="#" class="footer__link">Road bikes</a>
+                            <a href="#" class="footer__link">House</a>
                         </li>
                         <li>
-                            <a href="#" class="footer__link">Mountain bikes</a>
+                            <a href="#" class="footer__link">Villa</a>
                         </li>
                         <li>
-                            <a href="#" class="footer__link">Electric</a>
+                            <a href="#" class="footer__link">Apartment</a>
                         </li>
                         <li>
-                            <a href="#" class="footer__link">Accesories</a>
+                            <a href="#" class="footer__link">Plot</a>
                         </li>
                     </ul>
                 </div>
@@ -285,7 +184,7 @@
             </div>
 
 
-            <span class="footer__copy">&#169; Bedimcode. All rigths reserved</span>
+            <span class="footer__copy">&#169; My Broker. All rigths reserved</span>
         </footer>
 
         <!--=============== SCROLL UP ===============-->
